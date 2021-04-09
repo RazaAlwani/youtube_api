@@ -102,15 +102,22 @@ class Youtube_Plugin_Public {
 // shortcode function
 public function hello_shortcode()
 {
-	// gen setting calling the day number
-	$user_days=get_option('thedays');
-	$user_email=get_option('theemail');
-	# code...
+// 	// gen setting calling the day number
+// 	$user_days=get_option('thedays');
+// 	$user_email=get_option('theemail');
+// 	# code...
 
-	if($user_days==1)
-	{
-		echo($user_email);
+// 	if($user_days==1)
+// 	{
+// 		echo($user_email);
+// 	}
+
+// }	
+		
+		$theyoutubekey=get_option('YoutubeAPIKey');
+		$theyoutubeid=get_option('YoutubeChannelID');
+		echo($theyoutubekey);
+		
+		echo($theyoutubeid);
+		}
 	}
-
-}
-}

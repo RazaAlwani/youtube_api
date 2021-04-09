@@ -134,11 +134,11 @@ class Youtube_Plugin_Admin {
 
 	 public function register_form_admin(){
 //register all form information
-		register_setting('our_custom_set' , 'theemail');
+		register_setting('our_custom_set' , 'YoutubeAPIKey');
 
-		register_setting('our_custom_set' , 'thedays');
+		register_setting('our_custom_set' , 'YoutubeChannelID');
 
-		register_setting('our_custom_set' , 'themulti');
+		
 
 	 }
 
