@@ -162,6 +162,9 @@ class Youtube_Plugin {
 		//register admin form
 		$this->loader->add_action( 'admin_init',$plugin_admin, 'register_form_admin' );
 
+		// custom post type
+		$this->loader->add_action('init', $plugin_admin , 'cpp_youtube_api');
+
 		
 	}
 
@@ -181,6 +184,9 @@ class Youtube_Plugin {
 
 		//shortcode hooks [wpshortcode_1]
 		$this->loader->add_shortcode( 'wpshortcode_1',$plugin_public, 'hello_shortcode' );
+	
+	
+	
 	}
 
 	/**

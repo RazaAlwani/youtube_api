@@ -116,6 +116,7 @@ public function hello_shortcode()
 		
 		$theyoutubekey=get_option('YoutubeAPIKey');
 		$theyoutubeid=get_option('YoutubeChannelID');
+		
 		echo($theyoutubekey);
 		
 		echo($theyoutubeid);

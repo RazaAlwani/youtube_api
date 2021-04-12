@@ -125,6 +125,7 @@ class Youtube_Plugin_Loader {
 		}
 		// var_dump($this->shortcodes); die;
 		foreach ( $this->shortcodes as $shortcode ) {
+
 			add_shortcode( $shortcode['hook'], array( $shortcode['component'], $shortcode['callback'] ));
 		}
 	}
