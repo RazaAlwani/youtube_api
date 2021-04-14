@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Youtube_Plugin/includes
  * @author     Raza <asda@gmail.com>
  */
-class Youtube_Plugin_i18n {
+class Youtube_Plugin_I18n {
 
 
 	/**

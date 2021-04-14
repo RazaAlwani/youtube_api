@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -136,7 +135,6 @@ class Youtube_Plugin {
 	 * @access   private
 	 */
 	private function set_locale() {
-
 		$plugin_i18n = new Youtube_Plugin_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
@@ -156,16 +154,15 @@ class Youtube_Plugin {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		//admin menu hook
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu');
-		
-		//register admin form
-		$this->loader->add_action( 'admin_init',$plugin_admin, 'register_form_admin' );
+		// admin menu hook.
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu' );
 
-		// custom post type
-		$this->loader->add_action('init', $plugin_admin , 'cpp_youtube_api');
+		// register admin form.
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_form_admin' );
 
-		
+		// custom post type.
+		$this->loader->add_action( 'init', $plugin_admin, 'cpp_youtube_api' );
+
 	}
 
 	/**
@@ -182,11 +179,9 @@ class Youtube_Plugin {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		//shortcode hooks [wpshortcode_1]
-		$this->loader->add_shortcode( 'wpshortcode_1',$plugin_public, 'hello_shortcode' );
-	
-	
-	
+		// shortcode hooks [wpshortcode_1].
+		$this->loader->add_shortcode( 'wpshortcode_1', $plugin_public, 'hello_shortcode' );
+
 	}
 
 	/**

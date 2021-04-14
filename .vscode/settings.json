@@ -1,17 +1,8 @@
 {
+    "vscode-wordpress-hooks.typeDeclarations.olderPhpVersionSupport": "7.1",
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
     "cSpell.words": [
-        "dashicons",
-        "id",
-        "mainsettings",
-        "publicly",
-        "queryable",
-        "submenu",
-        "subpage",
-        "thedays",
-        "theemail",
-        "themulti",
-        "thepost",
-        "uncategorized",
-        "wpshortcode"
+        "hortcodes",
+        "youtube"
     ]
 }

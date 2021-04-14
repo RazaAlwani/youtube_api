@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Fired during plugin activation
  *
- * @link       razaalwani.ga
- * @since      1.0.0
+ * @link  razaalwani.ga
+ * @since 1.0.0
  *
  * @package    Youtube_Plugin
  * @subpackage Youtube_Plugin/includes
@@ -22,15 +21,14 @@
  */
 class Youtube_Plugin_Activator {
 
+
 	/**
 	 * Short Description. (use period)
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public static function activate() {
-
 	}
-
 }

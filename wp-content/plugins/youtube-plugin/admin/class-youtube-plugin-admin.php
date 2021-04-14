@@ -50,7 +50,7 @@ class Youtube_Plugin_Admin {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -108,23 +108,23 @@ class Youtube_Plugin_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	
 
-	 public function youtube_admin_page(){
-		//returns views
+
+	public function youtube_admin_page() {
+		// returns views.
 		require_once 'partials/youtube-plugin-admin-display.php';
-	 }
-
-
-	public function add_admin_menu(){
-		add_menu_page('Youtube', 'Youtube', 'manage_options' , 'youtube-page' , array( $this, 'youtube_admin_page' ) , 'dashicons-tickets' , 250);
-		add_submenu_page( 'youtube-page', 'Youtube', 'Youtube-submenu', 'manage_options', 'sub-menu', array( $this, 'youtube_admin_subpage' )); 
 	}
 
-	 public function youtube_admin_subpage(){
-		//returns views
+
+	public function add_admin_menu() {
+		add_menu_page( 'Youtube', 'Youtube', 'manage_options', 'youtube-page', array( $this, 'youtube_admin_page' ), 'dashicons-tickets', 250 );
+		add_submenu_page( 'youtube-page', 'Youtube', 'Youtube-submenu', 'manage_options', 'sub-menu', array( $this, 'youtube_admin_subpage' ) );
+	}
+
+	public function youtube_admin_subpage() {
+		// returns views.
 		require_once 'partials/youtube-plugin-submenu-display.php';
-	 }
+	}
 
 	 /**
 	 * Our custom form for admin.
@@ -132,75 +132,74 @@ class Youtube_Plugin_Admin {
 	 * @since    1.0.0
 	 */
 
-	 public function register_form_admin(){
-//register all form information
-		register_setting('our_custom_set' , 'YoutubeAPIKey');
+	public function register_form_admin() {
+		//register all form information.
+		register_setting( 'our_custom_set', 'YoutubeAPIKey' );
 
-		register_setting('our_custom_set' , 'YoutubeChannelID');
+		register_setting( 'our_custom_set', 'YoutubeChannelID' );
 
-		
+	}
 
-	 }
-	 
-		 // custom post type  
-		 public function cpp_youtube_api(){
-		
-				/*
-				* Creating a function to create our CPT
-			*/
-			$labels = array(
-				'name'                => _x( 'YouTube Videos', 'Post Type General Name'),
-				'singular_name'       => _x( 'YouTube Video', 'Post Type Singular Name'),
-				'menu_name'           => __( 'YouTube Video'),
-				'parent_item_colon'   => __( 'Parent Video'),
-				'all_items'           => __( 'All Videos'),
-				'view_item'           => __( 'View Videos'),
-				'add_new_item'        => __( 'Add New YouTube Video'),
-				'add_new'             => __( 'Add New'),
-				'edit_item'           => __( 'Edit'),
-				'update_item'         => __( 'Update'),
-				'search_items'        => __( 'Search'),
-				'not_found'           => __( 'Not Found'),
-				'not_found_in_trash'  => __( 'Not found in Trash'),
-			);
-			 
-		// Set other options for Custom Post Type
-			 
-			$args = array(
-				'label'               => __( 'Youtube CPT'),
-				'description'         => __( 'YouTube Videos from our Channel'),
-				'labels'              => $labels,
-				// Features this CPT supports in Post Editor
-				'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-				// You can associate this CPT with a taxonomy or custom taxonomy. 
-				'taxonomies'          => array( 'genres' ),
-				/* A hierarchical CPT is like Pages and can have
-				* Parent and child items. A non-hierarchical CPT
-				* is like Posts.
-				*/ 
-				// 'hierarchical'        => false,
-				'public'              => true,
-				'show_ui'             => true,
-				'show_in_menu'        => true,
-				'show_in_nav_menus'   => true,
-				'show_in_admin_bar'   => true,
-				'menu_position'       => 5,
-				'can_export'          => false,
-				'has_archive'         => true,
-				'exclude_from_search' => true,
-				'publicly_queryable'  => true,
-				'capability_type'     => 'post',
-				'show_in_rest' => true,
-		 
-			);
-			 
-			// Registering your Custom Post Type
-			register_post_type( 'youtube_cpt', $args );
-			// var_dump($args); die;
+		 // custom post type.
+	public function cpp_youtube_api() {
 
-		}
-		
-		}
-	 
+		   /*
+		   * Creating a function to create our CPT.
+		*/
+		$labels = array(
+			'name'               => _x( 'YouTube Videos', 'Post Type General Name' ),
+			'singular_name'      => _x( 'YouTube Video', 'Post Type Singular Name' ),
+			'menu_name'          => __( 'YouTube Video' ),
+			'parent_item_colon'  => __( 'Parent Video' ),
+			'all_items'          => __( 'All Videos' ),
+			'view_item'          => __( 'View Videos' ),
+			'add_new_item'       => __( 'Add New YouTube Video' ),
+			'add_new'            => __( 'Add New' ),
+			'edit_item'          => __( 'Edit' ),
+			'update_item'        => __( 'Update' ),
+			'search_items'       => __( 'Search' ),
+			'not_found'          => __( 'Not Found' ),
+			'not_found_in_trash' => __( 'Not found in Trash' ),
+		);
 
-	
+			 // Set other options for Custom Post Type.
+
+			 $args = array(
+				 'label'               => __( 'Youtube CPT' ),
+				 'description'         => __( 'YouTube Videos from our Channel' ),
+				 'labels'              => $labels,
+				 // Features this CPT supports in Post Editor
+				 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields' ),
+				 // You can associate this CPT with a taxonomy or custom taxonomy.
+				 'taxonomies'          => array( 'genres' ),
+
+				 /*
+				 A hierarchical CPT is like Pages and can have
+				 * Parent and child items. A non-hierarchical CPT
+				 * is like Posts.
+				 */
+				 // 'hierarchical'        => false,
+				 'public'              => true,
+				 'show_ui'             => true,
+				 'show_in_menu'        => true,
+				 'show_in_nav_menus'   => true,
+				 'show_in_admin_bar'   => true,
+				 'menu_position'       => 5,
+				 'can_export'          => false,
+				 'has_archive'         => true,
+				 'exclude_from_search' => true,
+				 'publicly_queryable'  => true,
+				 'capability_type'     => 'post',
+				 'show_in_rest'        => true,
+
+			 );
+
+			 // Registering your Custom Post Type.
+			 register_post_type( 'youtube_cpt', $args );
+
+	}
+
+}
+
+
+

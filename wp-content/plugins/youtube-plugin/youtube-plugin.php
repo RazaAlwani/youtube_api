@@ -41,7 +41,7 @@ define( 'YOUTUBE_PLUGIN_VERSION', '1.0.0' );
  * The code that runs during plugin activation.
  * This action is documented in includes/class-youtube-plugin-activator.php
  */
-function activate_youtube_plugin() {
+function ypp_activate_youtube_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-youtube-plugin-activator.php';
 	Youtube_Plugin_Activator::activate();
 }
@@ -50,7 +50,7 @@ function activate_youtube_plugin() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-youtube-plugin-deactivator.php
  */
-function deactivate_youtube_plugin() {
+function ypp_deactivate_youtube_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-youtube-plugin-deactivator.php';
 	Youtube_Plugin_Deactivator::deactivate();
 }
