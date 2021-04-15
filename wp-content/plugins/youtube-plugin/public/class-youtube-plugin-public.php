@@ -50,7 +50,7 @@ class Youtube_Plugin_Public {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -99,26 +99,14 @@ class Youtube_Plugin_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/youtube-plugin-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-// shortcode function
-public function hello_shortcode()
-{
-// 	// gen setting calling the day number
-// 	$user_days=get_option('thedays');
-// 	$user_email=get_option('theemail');
-// 	# code...
+	// shortcode function.
+	public function hello_shortcode() {
 
-// 	if($user_days==1)
-// 	{
-// 		echo($user_email);
-// 	}
+		$theyoutubekey = get_option( 'YoutubeAPIKey' );
+		$theyoutubeid  = get_option( 'YoutubeChannelID' );
 
-// }	
-		
-		$theyoutubekey=get_option('YoutubeAPIKey');
-		$theyoutubeid=get_option('YoutubeChannelID');
-		
-		echo($theyoutubekey);
-		
-		echo($theyoutubeid);
-		}
+		echo( $theyoutubekey );
+
+		echo( $theyoutubeid );
 	}
+}

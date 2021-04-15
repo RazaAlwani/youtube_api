@@ -23,6 +23,7 @@
 class Youtube_Plugin_Loader {
 
 
+
 	/**
 	 * The array of actions registered with WordPress.
 	 *
@@ -47,7 +48,6 @@ class Youtube_Plugin_Loader {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-
 		$this->actions    = array();
 		$this->filters    = array();
 		$this->shortcodes = array();
@@ -114,7 +114,6 @@ class Youtube_Plugin_Loader {
 	 * @since 1.0.0
 	 */
 	public function run() {
-
 		foreach ( $this->filters as $hook ) {
 			add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
@@ -128,14 +127,7 @@ class Youtube_Plugin_Loader {
 			add_shortcode( $shortcode['hook'], array( $shortcode['component'], $shortcode['callback'] ) );
 		}
 	}
-	/**
-	 * Add a new shortcode to the collection to be registered with WordPress
-
-	 * @since 1.0.0
-	 * @param string $tag       The name of the new shortcode.
-	 * @param object $component A reference to the instance of the object on which the shortcode is defined.
-	 * @param string $callback  The name of the function that defines the shortcode.
-	 */
+	/** Add_Shortcode( $tag:string, $callback:callable ). */
 	public function add_shortcode( $tag, $component, $callback, $priority = 10, $accepted_args = 2 ) {
 		$this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback, $priority, $accepted_args );
 	}

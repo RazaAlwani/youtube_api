@@ -3,6 +3,13 @@
     "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
     "cSpell.words": [
         "hortcodes",
+        "id",
+        "thechannelid",
+        "thecurrentpage",
+        "thepost",
+        "theyoutubeid",
+        "theyoutubekey",
+        "ydescription",
         "youtube"
     ]
 }
